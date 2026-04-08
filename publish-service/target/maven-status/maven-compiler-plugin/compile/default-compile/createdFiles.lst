@@ -1,0 +1,6 @@
+com\example\publishservice\client\AgentClient.class
+com\example\publishservice\entity\Publish.class
+com\example\publishservice\repository\PublishRepository.class
+com\example\publishservice\PublishApplication.class
+com\example\publishservice\controller\PublishController.class
+com\example\publishservice\service\PublishService.class

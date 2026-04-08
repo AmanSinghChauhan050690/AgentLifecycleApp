@@ -1,0 +1,6 @@
+com\example\subscriptionservice\client\AgentClient.class
+com\example\subscriptionservice\SubscriptionApplication.class
+com\example\subscriptionservice\repository\SubscriptionRepository.class
+com\example\subscriptionservice\entity\Subscription.class
+com\example\subscriptionservice\controller\SubscriptionController.class
+com\example\subscriptionservice\service\SubscriptionService.class

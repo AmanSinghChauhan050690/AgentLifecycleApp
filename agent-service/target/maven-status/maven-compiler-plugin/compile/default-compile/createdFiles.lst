@@ -1,0 +1,6 @@
+com\example\agentservice\service\AgentService.class
+com\example\agentservice\repository\InMemoryAgentRepository.class
+com\example\agentservice\controller\AgentController.class
+com\example\agentservice\entity\Agent.class
+com\example\agentservice\AgentApplication.class
+com\example\agentservice\repository\AgentRepository.class

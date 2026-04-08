@@ -10,3 +10,4 @@ public interface AgentRepository {
     List<Agent> findAll();
     void deleteById(String id);
 }
+
