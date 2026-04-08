@@ -76,3 +76,26 @@ description: "Task list for Agent Lifecycle feature"
 - [ ] T043 Implement purge job for soft-deleted agents (if retention policy chosen)
 
 *** End File"}
+
+---
+
+## Concrete Implementation Tasks (Maven multi-module + services)
+
+Purpose: Create a parent Maven project with modules for Eureka, API Gateway, and the three services, then implement minimal service skeletons and configuration so the full flow can be run locally.
+
+- [ ] T050 Create parent Maven project `pom.xml` at repository root with packaging `pom` and module entries for `eureka-server`, `api-gateway`, `agent-service`, `publish-service`, `subscription-service`
+- [ ] T051 [P] Create module directories and Maven module `pom.xml` for `eureka-server`, `api-gateway`, `agent-service`, `publish-service`, `subscription-service`
+- [ ] T052 [P] Create `eureka-server` skeleton: `eureka-server/src/main/java/...` and `eureka-server/src/main/resources/application.yml` to enable Eureka server
+- [ ] T053 [P] Create `api-gateway` skeleton: `api-gateway/src/main/java/...` and `api-gateway/src/main/resources/application.yml` with routes to services
+- [ ] T054 [P] Create `agent-service` skeleton with packages: `controller`, `service`, `repository`, `entity`, `dto` under `agent-service/src/main/java`
+- [ ] T055 [P] Create `publish-service` skeleton with packages: `controller`, `service`, `repository`, `entity`, `client`, `dto` under `publish-service/src/main/java`; include Feign client interface for `agent-service` in `client`
+- [ ] T056 [P] Create `subscription-service` skeleton with packages: `controller`, `service`, `repository`, `entity`, `client`, `dto` under `subscription-service/src/main/java`; include Feign client interface for `agent-service` in `client`
+- [ ] T057 Enable Feign clients and service discovery in relevant modules (add starter dependencies / annotations) in `publish-service` and `subscription-service`
+- [ ] T058 Add shared `application.yml` per module with sensible ports and Eureka/Discovery + gateway routes configuration (`eureka-server/src/main/resources/application.yml`, `api-gateway/src/main/resources/application.yml`, `agent-service/src/main/resources/application.yml`, etc.)
+- [ ] T059 Implement `Agent` entity, repository, service, and controller in `agent-service/src/main/java/...` (basic CRUD + soft-delete)
+- [ ] T060 Implement `Publish` entity, repository, service, controller in `publish-service/src/main/java/...` and add Feign-based agent validation client in `publish-service/src/main/java/.../client/AgentClient.java`
+- [ ] T061 Implement `Subscription` entity, repository, service, controller in `subscription-service/src/main/java/...` and add Feign-based agent validation client in `subscription-service/src/main/java/.../client/AgentClient.java`
+- [ ] T062 [P] Configure Maven modules and application YAMLs so all services can be run locally via `mvn -pl :eureka-server,:api-gateway,:agent-service,:publish-service,:subscription-service spring-boot:run` (or equivalent)
+- [ ] T063 Run all services and validate full flow: create agent → publish → subscribe (use API Gateway endpoints)
+
+**Notes**: File paths for Java sources should follow `src/main/java/<package>/...`. Replace `<package>` with the chosen base package for the project (e.g., `com.example.agentlifecycle`).
