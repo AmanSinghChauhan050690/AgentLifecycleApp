@@ -31,7 +31,21 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Gates determined based on constitution file:
+
+- Architecture style: Confirm Distributed Microservices (REST-based).
+- Communication: Confirm no event streaming; REST-only inter-service calls.
+- Data ownership: Confirm Database-Per-Service (no shared DBs).
+- Persistence: Confirm H2 is acceptable for service baseline or note required DB.
+- Gateway: Confirm a single API Gateway is planned for client traffic.
+- Discovery: Confirm Eureka Server is present for service registration.
+- Client libraries: Confirm use of OpenFeign/RestTemplate for calls.
+- Contracts: Confirm contract tests are defined for public REST APIs.
+- Failure handling: Confirm fail-fast and timeout/circuit-breaker strategies.
+- Entity sharing: Confirm services exchange only IDs, not full entities.
+
+Each gate MUST be explicitly marked PASS/FAIL and justified in the plan. Failing
+gates require a mitigation or acceptance rationale before proceeding to design.
 
 ## Project Structure
 

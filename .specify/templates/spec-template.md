@@ -126,3 +126,17 @@
 - [Assumption about scope boundaries, e.g., "Mobile support is out of scope for v1"]
 - [Assumption about data/environment, e.g., "Existing authentication system will be reused"]
 - [Dependency on existing system/service, e.g., "Requires access to the existing user profile API"]
+
+## Architecture Compliance (mandatory)
+
+All feature specs MUST include an explicit Architecture Compliance section that
+states whether the feature conforms to the project constitution. At minimum:
+
+- State: `Complies` or `Does Not Comply`.
+- If `Does Not Comply`, provide a short, testable rationale and a migration or
+  mitigation plan. Examples of compliance checks: REST-only communication,
+  database-per-service, API Gateway usage, Eureka discovery, and prohibition of
+  cross-service entity sharing.
+
+This section is mandatory and will be evaluated as part of the Constitution
+Check in the implementation plan.

@@ -69,6 +69,15 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T008 Configure error handling and logging infrastructure
 - [ ] T009 Setup environment configuration management
 
+Constitution-specific foundational tasks (must be completed in this phase):
+
+- [ ] T020 Deploy Eureka Server for service discovery and health checks
+- [ ] T021 Deploy and configure API Gateway as single entry point
+- [ ] T022 Configure each service with its own H2 database (Database-Per-Service)
+- [ ] T023 Provide contract-test harness and example contract tests for public APIs
+- [ ] T024 Implement OpenFeign/RestTemplate client boilerplate with sensible timeouts
+- [ ] T025 Add fail-fast error handling and circuit-breaker templates
+
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
 ---
